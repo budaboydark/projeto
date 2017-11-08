@@ -1,0 +1,190 @@
+# Registro Detalhe - Segmento A (Obrigatório - Remessa)
+# Baseado na documentação da FEBRABAN
+
+codigo_banco:
+  # Código fornecido pelo Banco Central para identificação do Banco que está recebendo ou enviando o
+  # arquivo, com o qual se firmou o contrato de prestação de serviços.
+
+  pos: [1, 3]
+  picture: '9(3)'
+
+lote_servico:
+  # Lote de Serviço
+  # Número seqüencial para identificar cada lote de serviço.
+  # Preencher com '0001' para o primeiro lote do arquivo. Para os demais: número do lote anterior
+  # acrescido de 1. Deve ser o mesmo número dentro do lote. O número não poderá ser repetido dentro
+  # do arquivo.
+  # Se registro for Header do Arquivo = '0000'
+  # Se registro for Trailer do Arquivo = '9999'
+  pos: [4, 7]
+  picture: '9(4)'
+
+tipo_registro:
+  # Código adotado pela FEBRABAN para identificar o tipo de registro.
+  # '3' = Detalhe
+  pos: [8, 8]
+  picture: '9(1)'
+  default: '3'
+
+numero_sequencial_lote:
+  # Nº Sequencial do Registro no Lote
+  # Deve ser iniciado sempre em 1, em cada novo lote
+  pos: [9, 13]
+  picture: '9(5)'
+
+codigo_segmento:
+  # Código adotado pela FEBRABAN para identificar o segmento do registro.
+  pos: [14, 14]
+  picture: 'X(1)'
+  default: 'P'
+
+tipo_movimento:
+    #tipo de Movimento
+    #Código  adotado  pela  FEBRABAN,  para  identificar  o  tipo  de  movimentação  enviada  no arquivo.
+        #Domínio:
+        #'0'  =  Indica INCLUSÃO
+        #‘1’ = Indica CONSULTA
+        #‘2’ = Indica SUSPENSÃO
+        #'3' =  Indica ESTORNO     (somente para retorno)
+        #‘4’ = Indica REATIVAÇÃO
+        #'5' =  Indica ALTERAÇÃO
+        #‘7` = Indica LIQUIDAÇAO
+        #'9' =  Indica EXCLUSÃO
+
+  pos: [15, 15]
+  picture: 'X(1)'
+
+codigo_instrucao_movimento:
+    #código adotado pela febraban, para identificar a ação a ser realizada com o lançamento enviado do arquivo.
+    # '00' = Inclusão de Registro Detalhe Liberado
+    # '09' = Inclusão do Registro Detalhe Bloqueado
+    # '10' = Alteração do Pagamento Liberado para Bloqueado (Bloqueio)
+    # '11' = Alteração do Pagamento Bloqueado para Liberado (Liberação)
+    # '17' = Alteração do Valor do Título
+    # '19' = Alteração da Data de Pagamento
+    # '23' = Pagamento Direto ao Fornecedor -Baixar
+    # '25' = Manutenção em Carteira -Não Pagar
+    # '27' = Retirada de Carteira -Não Pagar
+    # '33'  =  Estorno  por  Devolução  da  Câmara  Centralizadora    (somente  para  Tipo  de Movimento = '3')
+    # '40' = Alegação do Sacado
+    # '99' = Exclusão do Registro Detalhe Incluído Anteriormente
+
+    pos: [16, 17]
+    picture: '9(2)'
+
+camara:
+    pos: [18, 20]
+    picture: '9(3)'
+
+banco:
+    pos: [21, 23]
+    picture: '9(3)'
+
+agencia:
+  # Código da Agência mantenedora da conta, fornecido pela CAIXA.
+  pos: [24, 28]
+  picture: '9(5)'
+
+agencia_dv:
+  # Dígito Verificador da Agência mantendedora da conta, fornecido pela CAIXA.
+  pos: [29,29]
+  picture: '9(1)'
+
+conta:
+    #numero da conta corrente
+    # Código do Cedente
+    # Remessa: Código do Convênio no Banco (sem operação), tamanho: 12 posições, no formato
+    # 0000CCCCCCCC.
+    # Retorno: Código do Convênio no Banco (com operação), tamanho: 12 posições, no formato
+    # 0OOOCCCCCCCC.
+    # Onde:
+    # 0 = zero
+    # OOO = Operação
+    # CCCCCCCC = Cedente
+    pos: [30,41]
+    picture: '9(12)'
+
+conta_dv:
+    pos: [42,42]
+    picture: '9(1)'
+
+conta_dac:
+    pos: [43,43]
+    picture: '9(1)'
+
+nome:
+    pos: [44,73]
+    picture: 'X(30)'
+
+numero_documento:
+  # Número adotado e controlado pelo Cliente, para identificar o título de cobrança.
+  # Poderá conter número de duplicata, no caso de cobrança de duplicatas; número da apólice, no caso de
+  # cobrança de seguros, etc. Campo de preenchimento obrigatório.
+  pos: [74,93]
+  picture: 'X(20)'
+
+data_pagamento:
+  pos: [94,101]
+  picture: '9(8)'
+
+moeda_tipo:
+  pos: [102,104]
+  picture: 'X(3)'
+
+moeda_quantidade:
+  pos: [105,119]
+  picture: '9(15)'
+
+valor_lancamento:
+  pos: [120,134]
+  picture: '9(15)'
+
+nosso_numero:
+  # Identificação do Título no Banco
+  # Número adotado pelo Banco Cedente para identificar o Título.
+  # Para código de movimento igual a '01' (Entrada de Títulos), caso esteja preenchido com zeros, a
+  # numeração será atribuída pela CAIXA.
+  # Para montagem do Nosso Número, quando a emissão do título é feita pelo cliente (carteiras
+  # Cobrança Rápida, Sem Registro e SAD), solicitar especificação à Agência CAIXA de
+  # relacionamento.
+  # Obs: Nosso Número Sem Registro com 16 posições (arquivo Retorno) – posições 106 a 130 do
+  # Segmento T (ver Nota G072).
+  pos: [135,154]
+  picture: 'X(20)'
+
+data_real:
+  pos: [155,162]
+  picture: '9(8)'
+
+valor_real:
+  pos: [163,177]
+  picture: '9(15)'
+
+informacao2:
+  pos: [178,217]
+  picture: 'X(40)'
+
+codigo_doc:
+  pos: [218,219]
+  picture: 'X(2)'
+
+codigo_ted:
+  pos: [220,224]
+  picture: 'X(5)'
+
+codigo_finalidade_complementar:
+  pos: [225,226]
+  picture: 'X(2)'
+
+cnab:
+  pos: [227,229]
+  picture: 'X(3)'
+  default:'   '
+
+aviso:
+  pos: [230,230]
+  picture: '9(1)'
+
+ocorrencias:
+  pos: [231,240]
+  picture: 'X(10)'

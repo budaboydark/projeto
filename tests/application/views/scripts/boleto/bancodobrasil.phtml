@@ -1,0 +1,290 @@
+<html>
+	<head>
+		<style>
+			table, span {
+				font: 12px arial;
+			}
+			table {
+				width:700px;
+			}
+
+			td {
+				border-bottom: 1px solid black;
+				border-left: 5px solid #fbd11a;
+				height:30px;
+				vertical-align: top;
+			}
+
+			td span {
+				font-size: 8px;
+				color: blue;
+				display:block;
+				text-align:left !important;
+			}
+
+			.fundo_amarelo {
+				background-color: #FFFF99;
+			}
+
+			.branco {
+				border: none !important;
+				height: 20px;
+			}
+
+			.codigo_banco {
+				text-align:center;
+				font-size:16px;
+				width:50px;
+			}
+
+			.linha_digitavel {
+				text-align:right;
+				font-size:14px;
+			}
+
+			.codigo_banco, .linha_digitavel {
+				border-left: 1px solid black !important;
+				vertical-align: bottom !important;
+				color:#000099;
+				font-weight: bold;
+			}
+
+			.direita {
+				text-align: right;
+			}
+
+			.logo{
+				border-left: none !important;
+				vertical-align: bottom !important;
+			}
+
+			.instrucoes {
+				border-left: none !important;
+				font:12px arial !important;
+			}
+
+			.first {
+				width:180px;
+			}
+			.last {
+				width:160px;
+			}
+
+			.cortar {
+				width:667px;
+				height: 10px;
+				border-bottom: 1px dashed;
+				text-align: right;
+				font: 6px arial;
+				padding-bottom: 4px;
+				margin-top: -9px;
+				clear:both;
+			}
+
+			.table1 {
+				margin-bottom: 80px;
+			}
+
+			img.barcode_img {
+				margin-top:8px;
+				float:left;
+			}
+		</style>
+	</head>
+	<body>
+<span>Recibo do Sacado</span>
+		<table class="table1">
+			<tr>
+				<td class="logo"colspan="2" rowspan="2"><img  src="data:image/x-icon;base64,<?php echo $this->vars['logo'] ?>"/></td>
+				<td colspan="8" class="branco"></td>
+			</tr>
+			<tr>
+				<td class="codigo_banco">
+					<?php echo $this->vars['codigo_banco'] ?>
+				</td>
+				<td colspan="7" class="linha_digitavel"><?php echo $this->vars['linha_digitavel'] ?></td>
+			</tr>
+			<tr>
+				<td colspan="10">
+					<span>Cedente</span>
+					<strong><?php echo $this->vars['nome_cedente'] ?></strong><br/>
+					CPF/CNPJ: <?php echo $this->vars['cnpj_cedente']?><br/>
+					Endereço: <?php echo $this->vars['endereco_cedente']?><br/>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="5">
+					<span>Agência/Código Cedente</span>
+					<?php echo $this->vars['agencia'].' / '.$this->vars['conta']?>
+				</td>
+				<td colspan="4">
+					<span>Espécie</span>
+					<?php echo $this->vars['especie'] ?>
+				</td>
+				<td class="direita last">
+					<span>Nosso Número</span>
+					<?php echo $this->vars['nosso_numero'] ?>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+					<span>Nº Documento</span>
+					<?php echo $this->vars['numero_documento'] ?>
+				</td>
+				<td colspan="3">
+					<span>Data Documento</span>
+					<?php echo $this->vars['data_hoje']?>
+				</td>
+				<td colspan="3" class="fundo_amarelo">
+					<span>Vencimento</span>
+					<?php echo $this->vars['vencimento']?>
+				</td>
+				<td class="direita">
+					<span>(=) Valor do Documento</span>
+					<?php echo $this->vars['valor'] ?>
+				</td>
+			</tr>
+
+			<tr>
+				<td><span>(-) Desconto</span></td>
+				<td colspan="4"><span>(-) Outras Deduções</span></td>
+				<td colspan="3"><span>(+) Juros / Multa</span></td>
+				<td colspan="1"><span>(+) Outros Acréscimos</span></td>
+				<td class="direita fundo_amarelo"><span>(=) Valor Cobrado</span></td>
+			</tr>
+			<tr>
+				<td colspan="10">
+					<span>Sacado:</span>
+					<?php echo $this->vars['cliente_nome']?><br/>
+					CPF/CNPJ <?php echo $this->vars['cliente_cpf']?><br/>
+					<?php echo $this->vars['cliente_endereco']?><br/>
+					<?php echo $this->vars['cliente_cidade']?> - <?php echo $this->vars['cliente_uf']?> - CEP:<?php echo $this->vars['cliente_cep']?>
+				</td>
+			</tr>
+			<tr>
+			</tr>
+		</table>
+<div class="cortar">Corte aqui</div>
+
+		<table>
+			<tr>
+				<td class="logo"colspan="2" rowspan="2"><img  src="data:image/x-icon;base64,<?php echo $this->vars['logo'] ?>"/></td>
+				<td colspan="8" class="branco"></td>
+			</tr>
+			<tr>
+				<td class="codigo_banco">
+					<?php echo $this->vars['codigo_banco'] ?>
+				</td>
+				<td colspan="7" class="linha_digitavel"><?php echo $this->vars['linha_digitavel'] ?></td>
+			</tr>
+			<tr>
+				<td colspan="9">
+					<span>Local Pagamento</span>
+					Pagável em qualquer Banco até o vencimento
+				</td>
+				<td class="fundo_amarelo direita last">
+					<span>Vencimento</span>
+					<?php echo $this->vars['vencimento'] ?>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="9">
+					<span>Cedente</span>
+					<?php echo $this->vars['nome_cedente']; ?>
+				</td>
+				<td class="direita">
+					<span>Agência/Código Cedente</span>
+					<?php echo $this->vars['agencia'].' / '.$this->vars['conta']?>
+				</td>
+			</tr>
+			<tr>
+				<td class="first">
+					<span>Data Documento</span>
+					<?php echo $this->vars['data_hoje'] ?>
+				</td>
+				<td colspan="5">
+					<span>Nº documento</span>
+					<?php echo $this->vars['numero_documento'] ?>
+				</td>
+				<td>
+					<span>Espécie DOC</span>
+					DM
+				</td>
+				<td>
+					<span>Aceite</span>
+					N
+				</td>
+				<td>
+					<span>Data process.</span>
+					<?php echo $this->vars['data_hoje'] ?>
+				</td>
+				<td class="direita">
+					<span>Nosso número</span>
+					<?php echo $this->vars['nosso_numero']?>
+				</td>
+			</tr>
+			<tr>
+				<td class="fundo_amarelo"><span>Uso do Banco</span></td>
+				<td colspan="3">
+					<span>Carteira</span>
+					<?php echo $this->vars['carteira'] ?>
+                    <?php
+                        if(isset($this->vars['variacao_carteira']) && !empty($this->vars['variacao_carteira'])) {
+                            echo ' / '.$this->vars['variacao_carteira'];
+
+                        }
+                    ?>
+				</td>
+				<td>
+					<span>Espécie</span>
+					<?php echo $this->vars['especie'] ?>
+				</td>
+				<td colspan="3">
+					<span>Quantidade</span>
+				</td>
+				<td>
+					<span>Valor</span>
+				</td>
+				<td class="direita">
+					<span>(=) Valor do Documento</span>
+					<?php echo $this->vars['valor'] ?>
+				</td>
+			</tr>
+			<tr>
+				<td rowspan="5" colspan="9" class="instrucoes">
+					<span>Instruções:</span>
+					<?php if ((isset($this->vars['instrucao_boleto'])) && (!empty($this->vars['instrucao_boleto']))) : ?>
+						<?php echo nl2br($this->vars['instrucao_boleto']) ?>
+					<?php endif ?>
+				</td>
+				<td class="direita"><span>(-) Desconto / Abatimentos</span></td>
+			</tr>
+			<tr>
+				<td class="direita"><span>(-) Outras Deduções</span></td>
+			</tr>
+			<tr>
+				<td class="direita"><span>(+) Juros / Multa</span></td>
+			</tr>
+			<tr>
+				<td class="direita"><span>(+) Outros Acrescimos</span></td>
+			</tr>
+			<tr>
+				<td class="fundo_amarelo esquerda">
+					<span>(=) Valor Cobrado</span>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="10">
+					<span>Sacado:</span>
+					<?php echo $this->vars['cliente_nome']?><br/>
+					CPF/CNPJ <?php echo $this->vars['cliente_cpf']?><br/>
+					<?php echo $this->vars['cliente_endereco']?><br/>
+					<?php echo $this->vars['cliente_cidade']?> - <?php echo $this->vars['cliente_uf']?> - CEP:<?php echo $this->vars['cliente_cep']?>
+				</td>
+			</tr>
+		</table>
+		<img class="barcode_img" src="data:image/x-icon;base64,<?php echo $this->vars['barcode'] ?>"/>
+		<span>Autenticação Mecânica / Ficha de Compensação</span>
+		<div class="cortar">Corte aqui</div>
+	</body>
+</html>

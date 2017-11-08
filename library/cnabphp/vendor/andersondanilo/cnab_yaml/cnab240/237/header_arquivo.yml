@@ -1,0 +1,102 @@
+#baseado no layout do banco do BRADESCO
+codigo_banco:
+    pos: [1,3]
+    picture: '9(3)'
+
+lote:
+    pos: [4,7]
+    picture: '9(4)'
+    default: 0000
+
+registro:
+    pos: [8,8]
+    picture: '9(1)'
+    default: 0
+
+cnab:
+    pos: [9,17]
+    picture: 'X(9)'
+    default: '         '
+
+codigo_inscricao:
+    pos: [18,18]
+    picture: '9(1)'
+
+numero_inscricao:
+    pos: [19,32]
+    picture: '9(14)'
+
+convenio:
+    pos: [33,52]
+    picture: 'X(20)'
+
+agencia:
+    pos: [53,57]
+    picture: '9(5)'
+
+agencia_dv:
+    pos: [58,58]
+    picture: 'X(1)'
+
+codigo_cedente:
+    pos: [59,70]
+    picture: '9(12)'
+
+codigo_cedente_dv:
+    pos: [71,71]
+    picture: 'X(1)'
+
+agencia_mais_conta_dv:
+    pos: [72,72]
+    picture: 'X(1)'
+
+nome_empresa:
+    pos: [73,102]
+    picture: 'X(30)'
+
+nome_banco:
+    pos: [103,132]
+    picture: 'X(30)'
+
+cnab_1:
+    pos: [133,142]
+    picture: 'X(10)'
+    default: '          '
+
+codigo_remessa_retorno:
+    pos: [143,143]
+    picture: '9(1)'
+
+data_geracao:
+    pos: [144,151]
+    picture: '9(8)'
+
+hora_geracao:
+    pos: [152,157]
+    picture: '9(6)'
+
+numero_sequencial_arquivo:
+    pos: [158,163]
+    picture: '9(6)'
+
+layoutVersao:
+    pos: [164,166]
+    picture: '9(3)'
+    default: 080
+
+densidade:
+    pos: [167,171]
+    picture: '9(5)'
+
+reservado_banco:
+    pos: [172,191]
+    picture: 'X(20)'
+
+reservado_empresa:
+    pos: [192,211]
+    picture: 'X(20)'
+
+cnab_2:
+    pos: [212,240]
+    picture: 'X(29)'
+    default: '                             '

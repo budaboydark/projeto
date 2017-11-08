@@ -1,0 +1,14 @@
+Campos Necessários
+==================
+agencia
+cliente_cep
+cliente_cidade
+cliente_endereco
+cliente_nome
+cliente_uf
+cnpj_cedente
+codigo_cedente
+nome_cedente
+nosso_numero
+valor
+vencimento

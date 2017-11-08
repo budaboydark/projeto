@@ -1,0 +1,108 @@
+codigo_banco:
+    pos: [1,3]
+    picture: '9(3)'
+
+lote_servico:
+    pos: [4,7]
+    picture: '9(4)'
+
+tipo_registro:
+    pos: [8,8]
+    picture: '9(1)'
+    default: 1
+
+tipo_operacao:
+    pos: [9,9]
+    picture: 'X(1)'
+    default: 'C'
+
+tipo_servico:
+    pos: [10,11]
+    picture: '9(2)'
+
+forma_lancamento:
+    pos: [12,13]
+    picture: '9(2)'
+
+layoutVersao:
+    pos: [14,16]
+    picture: '9(3)'
+    default: '040'
+
+cnab:
+    pos: [17,17]
+    picture: 'X(1)'
+    default: ' '
+
+codigo_inscricao:
+    pos: [18,18]
+    picture: '9(1)'
+
+numero_inscricao:
+    pos: [19,32]
+    picture: '9(14)'
+
+convenio:
+    pos: [33,52]
+    picture: 'X(20)'
+
+agencia:
+    pos: [53,57]
+    picture: '9(5)'
+
+agencia_dv:
+    pos: [58,58]
+    picture: 'X(1)'
+
+conta:
+    pos: [59,70]
+    picture: '9(12)'
+
+conta_dv:
+    pos: [71,71]
+    picture: 'X(1)'
+
+agencia_mais_conta_dv:
+    pos: [72,72]
+    picture: 'X(1)'
+
+nome_empresa:
+    pos: [73,102]
+    picture: 'X(30)'
+
+mensagem:
+    pos: [103,142]
+    picture: 'X(40)'
+
+logradouro:
+    pos: [143,172]
+    picture: 'X(30)'
+
+numero:
+    pos: [173,177]
+    picture: '9(5)'
+
+complemento:
+    pos: [178,192]
+    picture: 'X(15)'
+
+cidade:
+    pos: [193,212]
+    picture: 'X(20)'
+
+cep:
+    pos: [213,220]
+    picture: '9(8)'
+
+estado:
+    pos: [221,222]
+    picture: '9(2)'
+
+cnab_1:
+    pos: [223,230]
+    picture: 'X(8)'
+    default: '        '
+
+ocorrencias:
+    pos: [231,240]
+    picture: 'X(10)'

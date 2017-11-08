@@ -1,0 +1,14 @@
+{
+    "name": "gerador arquivo remessa",
+    "description": "gerar arquivo de remessa para bancos",
+    "authors": [
+        {
+            "name": "rodrigo",
+            "email": "rodrigo.silva@f1solucoes.com.br"
+        }
+    ],
+    "require": {
+        "php": ">=5.2.8",
+        "andersondanilo/cnab_php": "1.3.*"
+    }
+}

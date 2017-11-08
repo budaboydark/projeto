@@ -1,0 +1,82 @@
+# Com base na documentação do banco do brasil
+# disponível em: http://www.bb.com.br/docs/pub/emp/empl/dwn/CbrVer04BB.pdf
+codigo_convenio:
+  pos: [33, 41]
+  picture: '9(9)'
+
+cobranca_cedente:
+  # Informar 0014 para cobrança cedente
+  pos: [42, 45]
+  picture: '9(4)'
+  default: 14
+
+codigo_carteira:
+  pos: [46, 47]
+  picture: '9(2)'
+
+variacao_carteira:
+  pos: [48, 50]
+  picture: 'X(3)'
+
+conta:
+  pos: [59, 70]
+  picture: '9(12)'
+
+conta_dv:
+  pos: [71, 71]
+  picture: 'X(1)'
+
+agencia_mais_cedente_dv:
+  # Campo não tratado pelo Banco do Brasil. Informar 'branco' (espaço) OU zero.
+  pos: [72, 72]
+  picture: 'X(1)'
+  default: ''
+
+nome_banco:
+    pos: [103,132]
+    picture: X(30)
+
+uso_exclusivo_bb_01:
+  pos: [133, 142]
+  picture: 'X(10)'
+  default: '          '
+
+codigo_remessa_retorno:
+    pos: [143,143]
+    picture: '9(1)'
+    default: 1
+
+data_geracao:
+    pos: [144,151]
+    picture: '9(8)'
+
+hora_geracao:
+    pos: [152,157]
+    picture: '9(6)'
+
+numero_sequencial_arquivo:
+    pos: [158,163]
+    picture: '9(6)'
+
+versao:
+    pos: [164,166]
+    picture: '9(3)'
+    default: 040
+
+densidade_gravacao_do_arquivo:
+    pos: [167,171]
+    picture: '9(5)'
+    default: '00000'
+
+reservado_banco:
+    pos: [172,191]
+    picture: 'X(20)'
+
+reservado_empresa:
+    pos: [192,211]
+    picture: 'X(20)'
+
+uso_exclusivo_febraban:
+    pos: [212,240]
+    picture: 'X(29)'
+    default: '                             '

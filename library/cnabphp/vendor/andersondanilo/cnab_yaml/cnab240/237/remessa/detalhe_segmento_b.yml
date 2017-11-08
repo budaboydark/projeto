@@ -1,0 +1,140 @@
+# Registro Detalhe - Segmento B (Obrigatório - Remessa)
+# Baseado na documentação do Bradesco
+
+
+codigo_banco:
+    # Código fornecido pelo Banco Central para identificação do Banco que está recebendo ou enviando o
+    # arquivo, com o qual se firmou o contrato de prestação de serviços.
+    pos: [1, 3]
+    picture: '9(3)'
+
+lote_servico:
+    # Lote de Serviço
+    # Número seqüencial para identificar cada lote de serviço.
+    # Preencher com '0001' para o primeiro lote do arquivo. Para os demais: número do lote anterior
+    # acrescido de 1. Deve ser o mesmo número dentro do lote. O número não poderá ser repetido dentro
+    # do arquivo.
+    # Se registro for Header do Arquivo = '0000'
+    # Se registro for Trailer do Arquivo = '9999'
+    pos: [4, 7]
+    picture: '9(4)'
+
+tipo_registro:
+    # Código adotado pela FEBRABAN para identificar o tipo de registro.
+    # '3' = Detalhe
+    pos: [8, 8]
+    picture: '9(1)'
+    default: '3'
+
+numero_sequencial_lote:
+    # Nº Sequencial do Registro no Lote
+    # Deve ser iniciado sempre em 1, em cada novo lote
+    pos: [9, 13]
+    picture: '9(5)'
+
+codigo_segmento:
+    # Código adotado pela FEBRABAN para identificar o segmento do registro.
+    pos: [14, 14]
+    picture: 'X(1)'
+    default: 'B'
+
+uso_exclusivo_febraban_01:
+    # Texto de observações destinado para uso exclusivo da FEBRABAN. Preencher com Brancos.
+    pos: [15, 17]
+    picture: 'X(3)'
+    default: '   '
+
+inscricao_tipo:
+    # Tipo de inscricao do favorecido
+    pos: [18, 18]
+    picture: '9(1)'
+
+inscricao_numero:
+    # Numero de inscricao do favorecido
+    pos: [19, 32]
+    picture: '9(14)'
+
+logradouro:
+    # Nome da rua, av, pça, etc
+    pos: [33,62]
+    picture: 'X(30)'
+
+numero:
+    # Número do local
+    pos: [63,67]
+    picture: '9(5)'
+
+complemento:
+    # Casa, apto, etc
+    pos: [68,82]
+    picture: 'X(15)'
+
+bairro:
+    # nome do bairro
+    pos: [83,97]
+    picture: 'X(15)'
+
+cidade:
+    # nome da cidade
+    pos: [98,117]
+    picture: 'X(20)'
+
+cep:
+    # CEP
+    pos: [118,125]
+    picture: '9(8)'
+
+estado:
+    # Sigla do estado
+    pos: [126,127]
+    picture: 'X(2)'
+
+vencimento:
+    # data do vencimento (nominal)
+    pos: [128,135]
+    picture: '9(8)'
+
+valor_doc:
+    # valor do documento (nominal)
+    pos: [136,150]
+    picture: '9(15)'
+
+valor_abatimento:
+    # valor do Abatimento
+    pos: [151,165]
+    picture: '9(15)'
+
+valor_desconto:
+    # valor do desconto
+    pos: [166,180]
+    picture: '9(15)'
+
+valor_mora:
+    # valor da mora
+    pos: [181,195]
+    picture: '9(15)'
+
+valor_multa:
+    # valor da multa
+    pos: [196,210]
+    picture: '9(15)'
+
+codigo_documento:
+    # código/documento favorecido
+    pos: [211,225]
+    picture: 'X(15)'
+
+aviso:
+    # Aviso ao favorecido
+    pos: [226,226]
+    picture: '9(1)'
+
+codigo_siape:
+    # uso exclusivo para SIAPE
+    pos: [227,232]
+    picture: '9(6)'
+
+identificacao_ispb:
+    # Código ISPB: identificacao do banco no SPB
+    pos: [233,240]
+    picture: '9(8)'

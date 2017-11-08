@@ -1,0 +1,91 @@
+Webservice de Boletos
+=====================
+Este webservice visa a cenrtalização de boletos para todo e qualquer projeto da
+F1 Soluções.
+
+Consulta de parâmetros
+======================
+Para realização de consultas, utiliza-se a controladora de boleto na ação de
+consulta, esta deve receber os parâmetros de consulta através da url(GET), o 
+único dado obrigatório é o 'boleto_nome', que deve estar dentro de um dos 
+boletos disponíveis¹, e o único parâmetro opcional é o 'estatico' que não 
+necessita de atribuição de valores, este último parâmetro faz com sejam 
+retornados somente os valores estáticos do boleto, ou seja, os valores que para 
+cada loja são configurados uma única vez.
+
+O retorno desta consulta dá-se por uma string no padrão XML.
+
+¹vide o banco de dados na tabela boleto na coluna codigo_boleto
+
+Retorno de consulta com êxito
+=============================
+<consulta>
+	<errors>0</errors>
+	<parametros>
+		<parametro_1>codigo_cedente</parametro_1>
+		<parametro_2>nome_cedente</parametro_2>
+		<parametro_3>cnpj_cedente</parametro_3>
+		<parametro_4>vencimento</parametro_4>
+		<parametro_5>valor</parametro_5>
+		<parametro_6>nosso_numero</parametro_6>
+		<parametro_7>agencia</parametro_7>
+		<parametro_8>cliente_endereco</parametro_8>
+		<parametro_9>cliente_nome</parametro_9>
+		<parametro_10>cliente_uf</parametro_10>
+		<parametro_11>cliente_cep</parametro_11>
+		<parametro_12>cliente_cidade</parametro_12>
+	</parametros>
+</consulta>
+
+Retorno de consulta com erro
+============================
+<consulta>
+	<errors>1</errors>
+	<descricao>Parametros invalidos</descricao>
+</consulta>
+
+
+
+Geração de Boletos
+==================
+Para a realização de geração de boletos utiliza-se a controladora de Boleto e 
+ação index, para que haja a geração dos boletos são necessários os parâmetros 
+específicos para cada boleto¹.
+
+O retorno da geração dá-se através de uma string no padrão XML.
+
+¹dados de cada boleto encontram-se em um arquivo com o nome do boleto no 
+diretório "docs".
+
+Retorno da Geração de Boletos com êxito
+=======================================
+<geracao>
+	<errors>0</errors>
+	<boleto>**********"html decodificado com urlencode"**********</boleto>
+</geracao>
+
+Retornos da Geração de Boleto com erro
+======================================
+*Erro quando não é passado parâmetro
+<geracao>
+	<errors>
+		<error>1</error>
+		<descricao>Parametros sao obrigatorios</descricao>
+	</errors>
+</geracao>
+
+*Erro quando os parâmetros passados são inválidos
+<geracao>
+	<errors>
+		<erro_1>
+			<campo>nome_cedente</campo>
+			<tipo_1>isEmpty</tipo_1>
+			<descricao_1>O valor é obrigatório e não pode estar vazio</descricao_1>
+		</erro_1>
+		<erro_2>
+			<campo>cnpj_cedente</campo>
+			<tipo_1>isEmpty</tipo_1>
+			<descricao_1>O valor é obrigatório e não pode estar vazio</descricao_1>
+		</erro_2>
+	</errors>
+</geracao>
